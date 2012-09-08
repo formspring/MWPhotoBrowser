@@ -23,7 +23,6 @@ static const CGFloat labelPadding = 10;
 - (id)initWithPhoto:(id<MWPhoto>)photo {
     self = [super initWithFrame:CGRectMake(0, 0, 320, 44)]; // Random initial frame
     if (self) {
-        _photo = [photo retain];
         self.opaque = NO;
         self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.6];
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
@@ -62,10 +61,5 @@ static const CGFloat labelPadding = 10;
     [self addSubview:_label];
 }
 
-- (void)dealloc {
-    [_label release];
-    [_photo release];
-    [super dealloc];
-}
 
 @end
